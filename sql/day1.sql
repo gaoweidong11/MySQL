@@ -21,6 +21,9 @@ FROM t_student;
 INSERT INTO t_student  -- 插入数据库
 VALUE ('2017001', '张三', '男', 18); -- 值
 /*
+Data Definition Language
+数据定义语言
+
 SELECT - extracts data from a database           选择
           从数据库提取数据
 UPDATE - updates data in a database                 更新

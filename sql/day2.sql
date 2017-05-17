@@ -1,35 +1,56 @@
-DROP DATABASE IF EXISTS db_1702;-- 如果有  则删除
+DROP DATABASE IF EXISTS db_1702;
+CREATE DATABASE db_1702;
 
-CREATE DATABASE db_1702; -- 创建数据库
+SELECT *
+FROM db_1702.student;
 
-DROP TABLE IF EXISTS db_1702.student; -- 表格是否存在  有则删
+SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE TABLE db_1702.student (   -- 创建 数据库表
-  id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
-  name   VARBINARY(255) COMMENT '姓名',
+DROP TABLE IF EXISTS db_1702.student;
+CREATE TABLE db_1702.student (
+  id     INT     AUTO_INCREMENT PRIMARY KEY -- auto increment 增量\ ['ɪŋkrɪm\(ə\)nt]
+  COMMENT 'ID PK', -- id identified
+  sno    VARCHAR(10)
+  COMMENT '学号',
+  name   VARCHAR(255)
+  COMMENT '姓名', -- 255
   intro  TEXT COMMENT '简介',
-  gender CHAR(2) COMMENT '性别',
-  age    INT COMMENT '年龄',
+  gender CHAR(2) DEFAULT '男'
+  COMMENT '性别',
+  age    INT UNSIGNED
+  COMMENT '年龄',
   height DOUBLE(3, 2) COMMENT '身高',
-  price  DECIMAL(6, 2) COMMENT '价格',
-  dob    DATE COMMENT '出生日期',
+  price  DECIMAL(10, 3) COMMENT '价格', -- 1234.56
+  dob    DATE COMMENT '出生日期', -- date of birth
   time   DATETIME COMMENT '时间'
 );
 
-SHOW FULL COLUMNS FROM db_1702.student;
+ALTER TABLE db_1702.student AUTO_INCREMENT = 10000;
 
-INSERT INTO db_1702.student VALUES (null,'tom', 'asdf', 'b', '18.0', '1.7', '123.456', '1999-5-1', '2017-05-16 10:39:01');
+
+INSERT INTO db_1702.student
+VALUES (NULL, '20170002', 'Jerry', 'asdf', '女', 19, 1.7, 1234567.891, '1999-5-1', '2017-5-1 1:39:01');
+
+INSERT INTO db_1702.student
+VALUES (NULL, '20170002', 'Jerry', 'asdf', NULL, 18, 1.7, 1234567.891, '1999-5-1', '2017-5-1 1:39:01');
+
+INSERT INTO db_1702.student
+VALUES (NULL, '20170001', NULL, 'asdf', NULL, NULL, 1.7, 1234567.891, '1999-5-1', '2017-5-1 1:39:01');
+
+INSERT INTO db_1702.student (name, age)
+VALUES ('Zhangsan', 20);
 
 SELECT *
 FROM db_1702.student;
 
 DELETE FROM db_1702.student
-WHERE id = 2;
+WHERE id = 4 OR id = 5;
 
 DELETE FROM db_1702.student;
 
-TRUNCATE TABLE db_1702.student;
+TRUNCATE TABLE db_1702.student; -- truncate 清空
 
+-- 课程表 课程名 学分 ...
 DROP TABLE IF EXISTS db_1702.course;
 CREATE TABLE db_1702.course (
   id     INT AUTO_INCREMENT PRIMARY KEY
@@ -55,6 +76,7 @@ FROM db_1702.student;
 
 INSERT INTO db_1702.course VALUES (NULL, 'Java SE', 4);
 INSERT INTO db_1702.course VALUES (NULL, 'MySQL', 3);
+
 INSERT INTO db_1702.course VALUES (NULL, NULL, 3);
 INSERT INTO db_1702.course VALUES (NULL, NULL, 3);
 INSERT INTO db_1702.course VALUES (NULL, NULL, 3);
