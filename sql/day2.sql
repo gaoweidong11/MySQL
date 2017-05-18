@@ -94,7 +94,7 @@ FROM db_1702.student_course;
 UPDATE db_1702.student_course
 SET db_1702.student_course.score = 50
 WHERE id = 1;
--- WHERE db_1702.student_course.courseId = 2 AND db_1702.student_course.studentId = 1;
+-- WHERE db_1702.student_course.courseId = 2 AND db_1702.student_co。urse.studentId = 1;
 
 SHOW FULL COLUMNS FROM db_1702.student_course;
 
