@@ -14,7 +14,7 @@ FROM scott.emp;
 
 SELECT *
 FROM db_1702.student
-LIMIT 2,1;
+LIMIT 2, 1;
 
 SELECT *
 FROM scott.salgrade;

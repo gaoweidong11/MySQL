@@ -122,3 +122,4 @@ FROM emp;
 
 SELECT *
 FROM salgrade;
+
