@@ -8,11 +8,16 @@ CREATE TABLE db_1702.ip (
 );
 
 SELECT count(*)
-FROM db_1702.ip;
+FROM db_1702.ip; -- 输出数据的个数
 
-TRUNCATE TABLE db_1702.ip;
+SELECT *
+FROM db_1702.ip;  -- 显示所有的数据
 
-SELECT * FROM db_1702.ip WHERE inet_aton('127.0.0.1') BETWEEN inet_aton(min) AND inet_aton(max);
+# TRUNCATE TABLE db_1702.ip;
+
+SELECT *
+FROM db_1702.ip
+WHERE inet_aton('127.0.0.1') BETWEEN inet_aton(min) AND inet_aton(max); -- 查询 127.0.0.1  的地址
 -- 166.111.123.45 A.B.C.D [0, 255] 59.66
 -- ip Internet Protocol 互联网协议
 -- https Hyper text transfer protocol secure

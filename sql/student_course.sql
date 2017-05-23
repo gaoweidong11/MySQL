@@ -123,3 +123,7 @@ WHERE c.id = 2;
 # student - course n:n
 # student - student_course 1:n
 # course - student_course 1:n
+
+SELECT count(*)
+FROM db_1702.ip
+WHERE geo RLIKE '拉萨市';  -- 查询拉萨市的ip 个数
