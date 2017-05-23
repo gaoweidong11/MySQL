@@ -18,6 +18,3 @@ FROM scott.v_emp;
 
 UPDATE scott.v_emp
 SET HIREDATE = '1981-5-1'WHERE HIREDATE = '1981-4-2';
-
-SELECT *
-FROM v_emp;   
