@@ -1,3 +1,4 @@
+SHOW DATABASES;
 DROP DATABASE db_exam;
 CREATE DATABASE db_exam;
 USE db_exam;
